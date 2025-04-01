@@ -1,4 +1,7 @@
 #include "StartScene.h"
+
+#include "SpriteRenderer.h"
+#include "Transform.h"
 #include "../Source/Scene.h"
 #include "../Source/GameObject.h"
 
@@ -13,8 +16,19 @@ StartScene::~StartScene()
 
 void StartScene::Initialize()
 {
-	GameObject* obj = new GameObject();
-	AddGameObject(obj);
+	Scene::Initialize();
+	GameObject* logo = new GameObject();
+
+	SpriteRenderer* sr = logo->AddComponent<SpriteRenderer>();
+	sr->SetName(L"sr");
+	sr->ImageLoad(L"../Resources/TitleLogo.png");
+
+	Transform* tf = logo->AddComponent<Transform>();
+	tf->SetName(L"tf");
+	tf->SetPosition(DirectX::SimpleMath::Vector2(500, 200));
+	tf->SetSize(DirectX::SimpleMath::Vector2(500, 400));
+
+	AddGameObject(logo);
 }
 
 void StartScene::Update()

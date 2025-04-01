@@ -11,12 +11,10 @@ public:
 	void UninitDirect2D();
 
 	HRESULT CreateD2DBitmapFromFile(const WCHAR* szFilePath, ID2D1Bitmap** ppID2D1Bitmap);
-	void LoadBitmapImg(const WCHAR* szFilePath);
 
 	ID2D1Factory* GetFactory() { return m_factory; }
 	ID2D1HwndRenderTarget* GetRenderTarget() { return m_renderTarget; }
 	IWICImagingFactory* GetImgFactory() { return m_imgFactory; }
-	ID2D1Bitmap* GetBitmap() { return m_bitmap; }
 
 private:
 	D2D() {}  // private »ý¼ºÀÚ
@@ -30,7 +28,6 @@ private:
 	ID2D1HwndRenderTarget* m_renderTarget;
 
 	IWICImagingFactory* m_imgFactory;
-	ID2D1Bitmap* m_bitmap;
 
 	HWND m_hwnd;
 };

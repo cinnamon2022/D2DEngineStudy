@@ -20,20 +20,19 @@ Stage1::~Stage1()
 
 void Stage1::Initialize()
 {
-	Player* bg = new Player();
-	Transform* tr
-		= bg->AddComponent<Transform>();
-	tr->SetPosition(DirectX::SimpleMath::Vector2(0, 0));
+	Scene::Initialize();
+	Player* dino = new Player();
 
-	tr->SetName(L"TR");
+	SpriteRenderer* sr = dino->AddComponent<SpriteRenderer>();
+	sr->SetName(L"sr");
+	sr->ImageLoad(L"..\\Resources\\Idle_1.png");
 
-	SpriteRenderer* sr
-		= bg->AddComponent<SpriteRenderer>();
-	sr->SetName(L"SR");
+	Transform* tf = dino->AddComponent<Transform>();
+	tf->SetName(L"tf");
+	tf->SetPosition(DirectX::SimpleMath::Vector2(500, 300));
+	tf->SetSize(DirectX::SimpleMath::Vector2(50, 50));
 
-	sr->ImageLoad(L"..\\Resources\\CloudOcean.png");
-
-	AddGameObject(bg);
+	AddGameObject(dino);
 }
 
 void Stage1::Update()

@@ -23,10 +23,11 @@ void SpriteRenderer::Render()
 {
 	Transform* tr = GetOwner()->GetComponent<Transform>();
 	DirectX::SimpleMath::Vector2 pos = tr->GetPosition();
-	D2D::GetInstance().GetRenderTarget()->DrawBitmap(D2D::GetInstance().GetBitmap());
+	DirectX::SimpleMath::Vector2 size = tr->GetSize();
+	D2D::GetInstance().GetRenderTarget()->DrawBitmap(m_bitmap, { pos.x,pos.y,pos.x + size.x,pos.y + size.y });
 }
 
 void SpriteRenderer::ImageLoad(const std::wstring& path)
 {
-	D2D::GetInstance().LoadBitmapImg(path.c_str());
+	D2D::GetInstance().CreateD2DBitmapFromFile(path.c_str(), &m_bitmap);
 } 

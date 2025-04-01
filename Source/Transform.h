@@ -4,12 +4,6 @@
 
 #include "Component.h"
 
-struct Pos
-{
-	int m_x;
-	int m_y;
-};
-
 class Transform : public Component
 {
 public:
@@ -22,10 +16,12 @@ public:
 	void Render()  override;
 
 	void SetPosition(DirectX::SimpleMath::Vector2 pos) { m_pos.x = pos.x;  m_pos.y = pos.y; }
+	void SetSize(DirectX::SimpleMath::Vector2 size) { m_size.x = size.x;  m_size.y = size.y; }
+
 	DirectX::SimpleMath::Vector2 GetPosition() { return  m_pos; }
-	int GetX() { return  m_pos.x; }
-	int GetY() { return m_pos.y; }
+	DirectX::SimpleMath::Vector2 GetSize() { return  m_size; }
 
 private:
 	DirectX::SimpleMath::Vector2 m_pos;
+	DirectX::SimpleMath::Vector2 m_size;
 };

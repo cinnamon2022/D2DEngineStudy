@@ -125,11 +125,6 @@ HRESULT D2D::CreateD2DBitmapFromFile(const WCHAR* szFilePath, ID2D1Bitmap** ppID
     return hr;
 }
 
-void D2D::LoadBitmapImg(const WCHAR* szFilePath)
-{
-    CreateD2DBitmapFromFile(szFilePath, &m_bitmap);
-}
-
 D2D::~D2D()
 {
 	UninitDirect2D();
