@@ -20,7 +20,6 @@ private:
 	D2D() {}  // private 생성자
 	~D2D(); // private 소멸자
 
-	// 복사 및 대입 연산자 삭제 (싱글톤 유지)
 	D2D(const D2D&) = delete;
 	D2D& operator=(const D2D&) = delete;
 

@@ -4,16 +4,18 @@
 #include <d2d1_1helper.h>
 
 #include "MyD2D.h"
+#include "InputSystem.h"
 #include "SceneManager.h"
 
 #pragma comment(lib,"d2d1.lib")
 #pragma comment(lib,"windowscodecs.lib")
 
-void MyApp::Initialize(HWND hwnd)
+void MyApp::Initialize(HINSTANCE hInstance, HWND hwnd)
 {
 	m_hwnd = hwnd;
 	D2D::GetInstance().InitDirect2D(hwnd);
 	SceneManager::Initialize();
+	InputSystem::GetInstance().Initialize(hInstance, hwnd);
 }
 
 void MyApp::Run()
@@ -26,6 +28,7 @@ void MyApp::Run()
 void MyApp::Update()
 {
 	SceneManager::Update();
+	InputSystem::GetInstance().Update();
 }
 
 void MyApp::LateUpdate()

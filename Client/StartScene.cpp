@@ -2,6 +2,8 @@
 
 #include "SpriteRenderer.h"
 #include "Transform.h"
+#include "InputSystem.h"
+#include "SceneManager.h"
 #include "../Source/Scene.h"
 #include "../Source/GameObject.h"
 
@@ -39,6 +41,10 @@ void StartScene::Update()
 void StartScene::LateUpdate()
 {
 	Scene::LateUpdate();
+	if (InputSystem::GetInstance().IsKeyPress(Input::DIM_LB))
+	{
+		SceneManager::SetActiveScene(L"Stage1");
+	}
 }
 
 void StartScene::Render()

@@ -4,12 +4,10 @@
 #include <d2d1_1helper.h>
 #include <vector>
 
-#include "GameObject.h"
-
 class MyApp
 {
 public:
-	void Initialize(HWND hwnd);
+	void Initialize(HINSTANCE hInstance, HWND hwnd);
 	void Run();
 
 	void Update();
@@ -18,7 +16,5 @@ public:
 
 private:
 	HWND m_hwnd;
-
-	std::vector<GameObject*> m_gameObject;
 };
 
