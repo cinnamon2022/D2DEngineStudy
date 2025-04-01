@@ -1,5 +1,8 @@
 #include "Stage1.h"
 
+#include <filesystem>
+#include <iostream>
+
 #include "Player.h"
 #include "SpriteRenderer.h"
 #include "Transform.h"
@@ -17,18 +20,20 @@ Stage1::~Stage1()
 
 void Stage1::Initialize()
 {
-	Player* pl = new Player();
+	Player* bg = new Player();
 	Transform* tr
-		= pl->AddComponent<Transform>();
-	tr->SetPos(800, 450);
+		= bg->AddComponent<Transform>();
+	tr->SetPosition(DirectX::SimpleMath::Vector2(0, 0));
 
 	tr->SetName(L"TR");
 
 	SpriteRenderer* sr
-		= pl->AddComponent<SpriteRenderer>();
+		= bg->AddComponent<SpriteRenderer>();
 	sr->SetName(L"SR");
 
-	AddGameObject(pl);
+	sr->ImageLoad(L"..\\Resources\\CloudOcean.png");
+
+	AddGameObject(bg);
 }
 
 void Stage1::Update()
@@ -43,5 +48,7 @@ void Stage1::LateUpdate()
 
 void Stage1::Render()
 {
+
 	Scene::Render();
+
 }

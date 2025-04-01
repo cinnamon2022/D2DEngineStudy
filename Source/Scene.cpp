@@ -19,6 +19,10 @@ Scene::~Scene()
 
 void Scene::Initialize()
 {
+	for (GameObject* gameObject : m_gameObjects)
+	{
+		gameObject->Initialize();
+	}
 }
 
 void Scene::Update()
@@ -32,8 +36,16 @@ void Scene::Update()
 
 void Scene::LateUpdate()
 {
+	for (GameObject* gameObject : m_gameObjects)
+	{
+		gameObject->LateUpdate();
+	}
 }
 
 void Scene::Render()
 {
+	for (GameObject* gameObject : m_gameObjects)
+	{
+		gameObject->Render();
+	}
 }

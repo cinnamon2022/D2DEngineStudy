@@ -21,7 +21,8 @@ public:
 	void LateUpdate()  override;
 	void Render()  override;
 
-	void SetPos(DirectX::SimpleMath::Vector2 pos) { m_pos.x = pos.x;  m_pos.y = pos.y; }
+	void SetPosition(DirectX::SimpleMath::Vector2 pos) { m_pos.x = pos.x;  m_pos.y = pos.y; }
+	DirectX::SimpleMath::Vector2 GetPosition() { return  m_pos; }
 	int GetX() { return  m_pos.x; }
 	int GetY() { return m_pos.y; }
 
