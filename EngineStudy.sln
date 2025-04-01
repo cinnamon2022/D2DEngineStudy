@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Engine", "Engine\Engine.vcxproj", "{A05B76D0-F3CD-477B-B0CC-E39F31247137}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyWindow", "Engine\Engine.vcxproj", "{A05B76D0-F3CD-477B-B0CC-E39F31247137}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Client", "Client\Client.vcxproj", "{D8F81BDF-0859-4AD7-9988-2D7F6C51DAC8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Source", "Source\Source.vcxitems", "{8C82D0A0-04CA-4AA3-80C0-FBD947096F59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +25,21 @@ Global
 		{A05B76D0-F3CD-477B-B0CC-E39F31247137}.Release|x64.Build.0 = Release|x64
 		{A05B76D0-F3CD-477B-B0CC-E39F31247137}.Release|x86.ActiveCfg = Release|Win32
 		{A05B76D0-F3CD-477B-B0CC-E39F31247137}.Release|x86.Build.0 = Release|Win32
+		{D8F81BDF-0859-4AD7-9988-2D7F6C51DAC8}.Debug|x64.ActiveCfg = Debug|x64
+		{D8F81BDF-0859-4AD7-9988-2D7F6C51DAC8}.Debug|x64.Build.0 = Debug|x64
+		{D8F81BDF-0859-4AD7-9988-2D7F6C51DAC8}.Debug|x86.ActiveCfg = Debug|Win32
+		{D8F81BDF-0859-4AD7-9988-2D7F6C51DAC8}.Debug|x86.Build.0 = Debug|Win32
+		{D8F81BDF-0859-4AD7-9988-2D7F6C51DAC8}.Release|x64.ActiveCfg = Release|x64
+		{D8F81BDF-0859-4AD7-9988-2D7F6C51DAC8}.Release|x64.Build.0 = Release|x64
+		{D8F81BDF-0859-4AD7-9988-2D7F6C51DAC8}.Release|x86.ActiveCfg = Release|Win32
+		{D8F81BDF-0859-4AD7-9988-2D7F6C51DAC8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Source\Source.vcxitems*{8c82d0a0-04ca-4aa3-80c0-fbd947096f59}*SharedItemsImports = 9
+		Source\Source.vcxitems*{a05b76d0-f3cd-477b-b0cc-e39f31247137}*SharedItemsImports = 4
+		Source\Source.vcxitems*{d8f81bdf-0859-4ad7-9988-2d7f6c51dac8}*SharedItemsImports = 4
 	EndGlobalSection
 EndGlobal
