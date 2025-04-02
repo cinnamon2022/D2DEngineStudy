@@ -17,9 +17,11 @@ public:
 		return scene;
 	}
 
-
 	static Scene* SetActiveScene(const std::wstring& name)
 	{
+		if (m_activeScene)
+			m_activeScene->Exit();
+
 		std::map<const std::wstring, Scene*>::iterator it = m_scenes.find(name);
 
 		if (it == m_scenes.end())
@@ -27,6 +29,8 @@ public:
 			return nullptr;
 		}
 		m_activeScene = it->second;
+		m_activeScene->Enter();
+
 		return m_activeScene;
 	}
 	static void Initialize();

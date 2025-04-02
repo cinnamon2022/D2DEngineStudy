@@ -3,6 +3,7 @@
 #include "SpriteRenderer.h"
 #include "Transform.h"
 #include "InputSystem.h"
+#include "Player.h"
 #include "SceneManager.h"
 #include "../Source/Scene.h"
 #include "../Source/GameObject.h"
@@ -30,7 +31,7 @@ void StartScene::Initialize()
 	tf->SetPosition(DirectX::SimpleMath::Vector2(500, 200));
 	tf->SetSize(DirectX::SimpleMath::Vector2(500, 400));
 
-	AddGameObject(logo);
+	AddObjectToLayer(logo, OBJECT);
 }
 
 void StartScene::Update()
@@ -41,7 +42,8 @@ void StartScene::Update()
 void StartScene::LateUpdate()
 {
 	Scene::LateUpdate();
-	if (InputSystem::GetInstance().IsKeyPress(Input::DIM_LB))
+
+	if (InputSystem::GetInstance().IsKeyDown(Input::DIM_LB))
 	{
 		SceneManager::SetActiveScene(L"Stage1");
 	}

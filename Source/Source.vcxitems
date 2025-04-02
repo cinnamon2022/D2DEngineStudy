@@ -18,6 +18,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Entity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)InputSystem.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Layer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MyApp.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MyD2D.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Scene.h" />
@@ -31,6 +32,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)InputSystem.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Layer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MyApp.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MyD2D.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Scene.cpp" />

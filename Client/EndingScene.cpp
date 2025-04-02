@@ -1,5 +1,5 @@
 #include "EndingScene.h"
-#include "../Source/Scene.h"
+#include "../Source/Layer.h"
 #include "../Source/GameObject.h"
 
 
@@ -13,8 +13,7 @@ EndingScene::~EndingScene()
 
 void EndingScene::Initialize()
 {
-	GameObject* obj = new GameObject();
-	AddGameObject(obj);
+
 }
 
 void EndingScene::Update()

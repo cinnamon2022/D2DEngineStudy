@@ -12,7 +12,7 @@ public:
 	void Stop();  // Call when paused.
 	void Tick();  // Call every frame.
 
-	static TimeSystem* m_Instance;
+	static TimeSystem& GetInstance();
 
 private:
 

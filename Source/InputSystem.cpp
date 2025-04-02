@@ -5,9 +5,6 @@
 #include <directxtk/SimpleMath.h>
 #include <cassert>
 
-constexpr float ROTATION_GAIN = 0.004f;
-constexpr float MOVEMENT_GAIN = 0.07f;
-
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
 
@@ -65,9 +62,9 @@ bool InputSystem::Initialize(HINSTANCE hInstance, HWND hWnd)
     return true;
 }
 
-bool InputSystem::IsKeyDown(byte keycord) const
+bool InputSystem::IsKeyDown(byte key) const
 {
-    return !(_oldKeyState[keycord] & 0x80) && (_keyState[keycord] & 0x80);
+    return !(_oldKeyState[key] & 0x80) && (_keyState[key] & 0x80);
 }
 
 bool InputSystem::IsKeyDown(Input::MouseState mouseState) const
@@ -75,9 +72,9 @@ bool InputSystem::IsKeyDown(Input::MouseState mouseState) const
     return !(_oldMouseState.rgbButtons[mouseState] & 0x80) && (_mouseState.rgbButtons[mouseState] & 0x80);
 }
 
-bool InputSystem::IsKeyUp(byte keycord) const
+bool InputSystem::IsKeyUp(byte key) const
 {
-    return (_oldKeyState[keycord] & 0x80) && !(_keyState[keycord] & 0x80);
+    return (_oldKeyState[key] & 0x80) && !(_keyState[key] & 0x80);
 }
 
 bool InputSystem::IsKeyUp(Input::MouseState mouseState) const
@@ -86,9 +83,9 @@ bool InputSystem::IsKeyUp(Input::MouseState mouseState) const
 }
 
 
-bool InputSystem::IsKeyPress(byte keycord) const
+bool InputSystem::IsKeyPress(byte key) const
 {
-    if (_keyState[keycord] & 0x80)
+    if (_keyState[key] & 0x80)
         return true;
 
     return false;
@@ -115,27 +112,6 @@ bool InputSystem::IsMouseWheel(Input::MouseState mouseState) const
     }
 
     return false;
-}
-
-float InputSystem::GetAxis(Input::Axis type)
-{
-    float axis = 0.f;
-
-    switch (type)
-    {
-    case Input::Vertical:
-        axis = -_padState.thumb[GamePadState::LY];
-        if (IsKeyPress(DIK_W)) axis = -1.f;
-        if (IsKeyPress(DIK_S)) axis = 1.f;
-        break;
-    case Input::Horizontal:
-        axis = _padState.thumb[GamePadState::LX];
-        if (IsKeyPress(DIK_A)) axis = -1.f;
-        if (IsKeyPress(DIK_D)) axis = 1.f;
-        break;
-    }
-
-    return axis;
 }
 
 float InputSystem::GetMouseMove(Input::MouseMove mouseMove) const

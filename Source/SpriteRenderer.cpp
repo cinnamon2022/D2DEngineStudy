@@ -8,6 +8,7 @@ SpriteRenderer::SpriteRenderer()
 }
 SpriteRenderer::~SpriteRenderer()
 {
+	delete m_bitmap;
 }
 void SpriteRenderer::Initialize()
 {

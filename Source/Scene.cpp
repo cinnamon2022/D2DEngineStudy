@@ -1,5 +1,8 @@
 #include "Scene.h"
 
+#include <algorithm>
+
+#include "Layer.h"
 /*
  *씬과 씬을 넘나들면서 씬은 정보를 넘겨야한다
  *
@@ -7,45 +10,61 @@
  *
  * 
  */
-Scene::Scene():m_gameObjects{}
+Scene::Scene()
 {
-
+	m_layers.resize(END);
+	for (Layer*& layer : m_layers)
+	{
+		layer = new Layer();
+	}
 }
 
 Scene::~Scene()
 {
+	for (Layer*& layer : m_layers)
+	{
+		delete layer;
+	}
+}
 
+void Scene::Enter()
+{
+}
+
+void Scene::Exit()
+{
 }
 
 void Scene::Initialize()
 {
-	for (GameObject* gameObject : m_gameObjects)
+	for (Layer* layer : m_layers)
 	{
-		gameObject->Initialize();
+		layer->Initialize();
 	}
 }
 
 void Scene::Update()
 {
-	for (GameObject* gameObject : m_gameObjects)
+	for (Layer* layer : m_layers)
 	{
-		gameObject->Update();
+		layer->Update();
 	}
 
 }
 
 void Scene::LateUpdate()
 {
-	for (GameObject* gameObject : m_gameObjects)
+	for (Layer* layer : m_layers)
 	{
-		gameObject->LateUpdate();
+		layer->LateUpdate();
 	}
 }
 
 void Scene::Render()
 {
-	for (GameObject* gameObject : m_gameObjects)
+	for (Layer* layer : m_layers)
 	{
-		gameObject->Render();
+		layer->Render();
 	}
 }
+

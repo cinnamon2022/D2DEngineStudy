@@ -13,8 +13,7 @@ Stage2::~Stage2()
 
 void Stage2::Initialize()
 {
-	GameObject* obj = new GameObject();
-	AddGameObject(obj);
+
 }
 
 void Stage2::Update()

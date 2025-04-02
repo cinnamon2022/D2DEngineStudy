@@ -39,6 +39,7 @@ void MyApp::LateUpdate()
 void MyApp::Render()
 {
 	D2D::GetInstance().GetRenderTarget()->BeginDraw();
+	D2D::GetInstance().GetRenderTarget()->Clear(D2D1::ColorF(D2D1::ColorF::Black));
 	D2D::GetInstance().GetRenderTarget()->SetTransform(D2D1::Matrix3x2F::Identity());
 	SceneManager::Render();
 	D2D::GetInstance().GetRenderTarget()->EndDraw();
