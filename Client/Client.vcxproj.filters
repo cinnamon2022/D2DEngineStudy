@@ -1,25 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Scene">
+    <Filter Include="Load">
       <UniqueIdentifier>{0c24a6a2-2564-44e1-81ab-be042065b2ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="0.Strat">
+      <UniqueIdentifier>{a4e1eb7c-6602-4729-b102-d9cc39bfa18e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99.End">
+      <UniqueIdentifier>{97171390-19da-4fbd-a261-42e058efa30d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject">
+      <UniqueIdentifier>{ce703c9b-b633-480b-ab77-9f0d9fab22a9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Stage1.h" />
     <ClInclude Include="LoadScenes.h">
-      <Filter>Scene</Filter>
+      <Filter>Load</Filter>
     </ClInclude>
     <ClInclude Include="Stage2.h" />
-    <ClInclude Include="StartScene.h" />
-    <ClInclude Include="EndingScene.h" />
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="LoadResources.h">
+      <Filter>Load</Filter>
+    </ClInclude>
+    <ClInclude Include="StartScene.h">
+      <Filter>0.Strat</Filter>
+    </ClInclude>
+    <ClInclude Include="EndingScene.h">
+      <Filter>99.End</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Stage1.cpp" />
     <ClCompile Include="Stage2.cpp" />
-    <ClCompile Include="StartScene.cpp" />
-    <ClCompile Include="EndingScene.cpp" />
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="StartScene.cpp">
+      <Filter>0.Strat</Filter>
+    </ClCompile>
+    <ClCompile Include="EndingScene.cpp">
+      <Filter>99.End</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

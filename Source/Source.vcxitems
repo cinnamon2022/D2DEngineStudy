@@ -14,6 +14,8 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Animation.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Animator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Component.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Entity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h" />
@@ -21,14 +23,18 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Layer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MyApp.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MyD2D.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Resources.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Resource.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ResourceManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Scene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SpriteRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Texture.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TimeSystem.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Transform.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Animation.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Animator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Component.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp" />
@@ -36,10 +42,12 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Layer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MyApp.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MyD2D.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Resources.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Resource.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ResourceManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Scene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)SceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)SpriteRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Texture.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TimeSystem.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Transform.cpp" />
   </ItemGroup>

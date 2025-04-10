@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)GameObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Layer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MyApp.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MyD2D.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Scene.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Transform.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)SpriteRenderer.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Animator.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)InputSystem.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)TimeSystem.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ResourceManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)SceneManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Component.cpp">
+      <Filter>Component\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Texture.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Resource.cpp">
+      <Filter>Resource\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Animation.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Entity.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)GameObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Layer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MyApp.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MyD2D.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Scene.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Transform.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)SpriteRenderer.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Animator.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)InputSystem.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)TimeSystem.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ResourceManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)SceneManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Component.h">
+      <Filter>Component\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Texture.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Resource.h">
+      <Filter>Resource\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Animation.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Component">
+      <UniqueIdentifier>{e462990e-5a16-4d8a-a6e7-928644dc4294}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System">
+      <UniqueIdentifier>{2bd8e6dc-0105-45c8-944d-8b54658c8952}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager">
+      <UniqueIdentifier>{f202a679-b101-4189-84b4-a1ca21db114a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Base">
+      <UniqueIdentifier>{934f83a9-bbe8-4260-b730-81debb861aba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{67dde44e-d3f5-490a-be19-d9bc288e56bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Base">
+      <UniqueIdentifier>{c1107a5b-4116-4b6a-a061-5f59ab86a609}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -20,6 +20,8 @@ public:
 		T* comp = new T();
 		comp->Initialize();
 		comp->SetOwner(this);
+
+		mComponents[(int)comp->GetType()] = comp;
 		mComponents.push_back(comp);
 
 		return comp;

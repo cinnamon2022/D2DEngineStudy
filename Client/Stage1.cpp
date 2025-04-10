@@ -7,9 +7,12 @@
 #include "Player.h"
 #include "SceneManager.h"
 #include "SpriteRenderer.h"
+#include "Texture.h"
 #include "Transform.h"
 #include "../Source/Scene.h"
 #include "../Source/GameObject.h"
+#include "../Source/ResourceManager.h"
+#include "../Source/Animator.h"
 
 
 Stage1::Stage1()
@@ -37,15 +40,15 @@ void Stage1::Initialize()
 {
 	Scene::Initialize();
 	dino = new Player();
-
-	SpriteRenderer* sr = dino->AddComponent<SpriteRenderer>();
-	sr->SetName(L"sr");
-	sr->ImageLoad(L"..\\Resources\\Idle_1.png");
+	Animator* animator = dino->AddComponent<Animator>();
+	animator->CreateAnimation(L"PlayerIdle", ResourceManager::GetInstance().Find<Texture>(L"PlayerIdle"),
+		DirectX::SimpleMath::Vector2(0, 0), DirectX::SimpleMath::Vector2(129.5, 108), 
+		DirectX::SimpleMath::Vector2(0, 0), 4, 0.08f);
+	animator->PlayAnimation(L"PlayerIdle", true);
 
 	Transform* tf = dino->AddComponent<Transform>();
 	tf->SetName(L"tf");
-	tf->SetPosition(DirectX::SimpleMath::Vector2(500, 800));
-	tf->SetSize(DirectX::SimpleMath::Vector2(50, 50));
+	tf->SetPosition(DirectX::SimpleMath::Vector2(0, 0));
 
 	AddObjectToLayer(dino,PLAYER);
 }

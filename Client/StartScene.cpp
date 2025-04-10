@@ -7,7 +7,7 @@
 #include "SceneManager.h"
 #include "../Source/Scene.h"
 #include "../Source/GameObject.h"
-
+#include "../Source/ResourceManager.h"
 
 StartScene::StartScene()
 {
@@ -23,13 +23,11 @@ void StartScene::Initialize()
 	GameObject* logo = new GameObject();
 
 	SpriteRenderer* sr = logo->AddComponent<SpriteRenderer>();
-	sr->SetName(L"sr");
-	sr->ImageLoad(L"../Resources/TitleLogo.png");
+	sr->SetTexture(ResourceManager::GetInstance().Find<Texture>(L"TitleLogo"));
 
 	Transform* tf = logo->AddComponent<Transform>();
 	tf->SetName(L"tf");
 	tf->SetPosition(DirectX::SimpleMath::Vector2(500, 200));
-	tf->SetSize(DirectX::SimpleMath::Vector2(500, 400));
 
 	AddObjectToLayer(logo, OBJECT);
 }

@@ -5,8 +5,15 @@ class GameObject;
 class Component : public Entity
 {
 public:
-	Component();
-	~Component();
+	enum class	eComponentType
+	{
+		Transform,
+		SpriteRenderer,
+		Animator,
+		End
+	};
+	Component(eComponentType m_type);
+	~Component();  
 
 	virtual void Initialize();
 	virtual void Update();
@@ -15,7 +22,9 @@ public:
 
 	void SetOwner(GameObject* owner) { mOwner = owner; };
 	GameObject* GetOwner() { return mOwner; }
+	eComponentType GetType() { return m_type; }
+
 private:
 	GameObject* mOwner;
-
+	eComponentType m_type;
 };

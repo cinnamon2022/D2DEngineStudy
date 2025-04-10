@@ -5,6 +5,7 @@
 
 #include "MyD2D.h"
 #include "InputSystem.h"
+#include "TimeSystem.h"
 #include "SceneManager.h"
 
 #pragma comment(lib,"d2d1.lib")
@@ -16,6 +17,7 @@ void MyApp::Initialize(HINSTANCE hInstance, HWND hwnd)
 	D2D::GetInstance().InitDirect2D(hwnd);
 	SceneManager::Initialize();
 	InputSystem::GetInstance().Initialize(hInstance, hwnd);
+	
 }
 
 void MyApp::Run()
@@ -27,6 +29,7 @@ void MyApp::Run()
 
 void MyApp::Update()
 {
+	TimeSystem::GetInstance().Tick();
 	SceneManager::Update();
 	InputSystem::GetInstance().Update();
 }

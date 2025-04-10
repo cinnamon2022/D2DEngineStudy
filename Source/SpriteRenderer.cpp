@@ -3,12 +3,14 @@
 #include "MyD2D.h"
 #include "Transform.h"
 
-SpriteRenderer::SpriteRenderer() 
+SpriteRenderer::SpriteRenderer()
+:Component(eComponentType::SpriteRenderer),
+m_texture(nullptr)
 {
 }
 SpriteRenderer::~SpriteRenderer()
 {
-	delete m_bitmap;
+
 }
 void SpriteRenderer::Initialize()
 {
@@ -19,16 +21,13 @@ void SpriteRenderer::Update()
 void SpriteRenderer::LateUpdate()
 {
 }
-
 void SpriteRenderer::Render()
 {
+	if (m_texture == nullptr)
+		assert(false);
 	Transform* tr = GetOwner()->GetComponent<Transform>();
 	DirectX::SimpleMath::Vector2 pos = tr->GetPosition();
-	DirectX::SimpleMath::Vector2 size = tr->GetSize();
-	D2D::GetInstance().GetRenderTarget()->DrawBitmap(m_bitmap, { pos.x,pos.y,pos.x + size.x,pos.y + size.y });
+	//DirectX::SimpleMath::Vector2 size = tr->GetSize();
+	DirectX::SimpleMath::Vector2 size = { m_texture->GetWidth(),m_texture->GetHeight() };
+	D2D::GetInstance().GetRenderTarget()->DrawBitmap(m_texture->GeImage(), { pos.x,pos.y,pos.x + size.x,pos.y + size.y });
 }
-
-void SpriteRenderer::ImageLoad(const std::wstring& path)
-{
-	D2D::GetInstance().CreateD2DBitmapFromFile(path.c_str(), &m_bitmap);
-} 

@@ -5,6 +5,7 @@
 #include "Engine.h"
 #include "../Source/MyApp.h"
 #include "../Client/LoadScenes.h"
+#include "../Client/LoadResources.h"
 
 #define MAX_LOADSTRING 100
 
@@ -84,8 +85,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
     hInst = hInstance;
 
-    const UINT width = 1600;
-    const UINT height = 900;
+    const UINT width = 2000;
+    const UINT height = 1200;
 
     HWND hWnd = CreateWindowW(L"MyWin", L"MyWin", WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, CW_USEDEFAULT, width, height, nullptr, nullptr, hInstance, nullptr);
@@ -100,6 +101,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
     ShowWindow(hWnd, nCmdShow);
     UpdateWindow(hWnd);
 
+    //씬에서 사용할 리소스들을 로드하는 함수  
+    LoadResources();
 	//씬을 로드하는 함수
     LoadScenes();
 
