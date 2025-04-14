@@ -6,9 +6,10 @@
 #include "InputSystem.h"
 #include "Player.h"
 #include "SceneManager.h"
-#include "SpriteRenderer.h"
 #include "Texture.h"
 #include "Transform.h"
+#include "PlayerScript.h"
+
 #include "../Source/Scene.h"
 #include "../Source/GameObject.h"
 #include "../Source/ResourceManager.h"
@@ -49,6 +50,9 @@ void Stage1::Initialize()
 	Transform* tf = dino->AddComponent<Transform>();
 	tf->SetName(L"tf");
 	tf->SetPosition(DirectX::SimpleMath::Vector2(0, 0));
+
+
+	dino->AddComponent<PlayerScript>();
 
 	AddObjectToLayer(dino,PLAYER);
 }

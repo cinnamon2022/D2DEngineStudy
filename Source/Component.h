@@ -8,6 +8,7 @@ public:
 	enum class	eComponentType
 	{
 		Transform,
+		Script,
 		SpriteRenderer,
 		Animator,
 		End
