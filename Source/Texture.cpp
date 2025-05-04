@@ -1,6 +1,9 @@
 #include "Texture.h"
 
+#include <directxtk/SimpleMath.h>
+
 #include "MyD2D.h"
+#include "Transform.h"
 
 Texture::Texture() : Resource (eResourceType::Texture)
 {

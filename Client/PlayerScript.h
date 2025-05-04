@@ -4,6 +4,13 @@ class PlayerScript :
     public Script
 {
 public:
+	enum class eState
+	{
+		Idle,
+		LeftWalk,
+		RightWalk,
+        Attack
+	};
     PlayerScript();
     ~PlayerScript();
 

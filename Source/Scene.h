@@ -21,11 +21,11 @@ public:
 	virtual void LateUpdate();
 	virtual void Render();
 
-	void AddObjectToLayer(GameObject* gameObject,const LayerType type)
+	void AddObjectToLayer(GameObject* gameObject, const eLayerType type)
 	{
 		m_layers[(UINT)type]->AddGameObject(gameObject);
 	}
-
+	Layer* GetLayer(eLayerType type) { return m_layers[(UINT)type]; }
 private:
 	std::vector<Layer*> m_layers;
 };

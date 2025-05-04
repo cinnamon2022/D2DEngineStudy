@@ -5,7 +5,7 @@
 
 class GameObject;
 
-enum LayerType { BG, MAP, OBJECT, PLAYER, UI, END };
+enum eLayerType { BG, MAP, OBJECT, PLAYER, UI, END };
 
 class Layer : public Entity
 {
@@ -22,6 +22,7 @@ public:
 	{
 		m_gameObjects.push_back(gameObject);
 	}
+	const std::vector<GameObject*> GetGameObjects(){return m_gameObjects;}
 
 private:
 	std::vector<GameObject*> m_gameObjects;

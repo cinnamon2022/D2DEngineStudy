@@ -33,6 +33,7 @@ public:
 
 		return m_activeScene;
 	}
+	static Scene* GetActiveScene(){ return m_activeScene; }
 	static void Initialize();
 	static void Update();
 	static void LateUpdate();

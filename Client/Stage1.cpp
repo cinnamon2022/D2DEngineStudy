@@ -3,8 +3,10 @@
 #include <filesystem>
 #include <iostream>
 
+#include "Collider.h"
 #include "InputSystem.h"
 #include "Player.h"
+#include "CollisionManager.h"
 #include "SceneManager.h"
 #include "Texture.h"
 #include "Transform.h"
@@ -39,18 +41,26 @@ void Stage1::Exit()
 
 void Stage1::Initialize()
 {
+	CollisionManager::GetInstance().CollisionLayerCheck(eLayerType::PLAYER, eLayerType::OBJECT, true);
+
 	Scene::Initialize();
 	dino = new Player();
 	Animator* animator = dino->AddComponent<Animator>();
 	animator->CreateAnimation(L"PlayerIdle", ResourceManager::GetInstance().Find<Texture>(L"PlayerIdle"),
 		DirectX::SimpleMath::Vector2(0, 0), DirectX::SimpleMath::Vector2(129.5, 108), 
 		DirectX::SimpleMath::Vector2(0, 0), 4, 0.08f);
-	animator->PlayAnimation(L"PlayerIdle", true);
+	animator->CreateAnimation(L"PlayerWalk", ResourceManager::GetInstance().Find<Texture>(L"PlayerIdle"),
+		DirectX::SimpleMath::Vector2(0, 0), DirectX::SimpleMath::Vector2(129.5, 108),
+		DirectX::SimpleMath::Vector2(0, 0), 4, 0.08f);
+	animator->CreateAnimation(L"PlayerAttack", ResourceManager::GetInstance().Find<Texture>(L"PlayerIdle"),
+		DirectX::SimpleMath::Vector2(0, 0), DirectX::SimpleMath::Vector2(129.5, 108),
+		DirectX::SimpleMath::Vector2(0, 0), 4, 0.08f);
 
+	animator->PlayAnimation(L"PlayerIdle");
 	Transform* tf = dino->AddComponent<Transform>();
 	tf->SetName(L"tf");
 	tf->SetPosition(DirectX::SimpleMath::Vector2(0, 0));
-
+	dino->AddComponent<Collider>();
 
 	dino->AddComponent<PlayerScript>();
 

@@ -55,7 +55,15 @@ void Animation::Render()
 		1.0f, D2D1_BITMAP_INTERPOLATION_MODE_LINEAR,
 		{ sprite.lefttop.x,sprite.lefttop.y, sprite.lefttop.x + sprite.size.x,sprite.lefttop.y + sprite.size.y }
 	);
+#ifdef _DEBUG
+	ID2D1SolidColorBrush* pBrush;
+	D2D::GetInstance().GetRenderTarget()->CreateSolidColorBrush(
+		D2D1::ColorF(D2D1::ColorF::Blue), &pBrush);
+	D2D::GetInstance().GetRenderTarget()->DrawRectangle(
+		{ pos.x,pos.y,pos.x + sprite.size.x,pos.y + sprite.size.y }, pBrush, 1.0f);
 
+	pBrush->Release();
+#endif
 }
 
 void Animation::CreateAnimation(const std::wstring& name, Texture* animationImage,

@@ -2,12 +2,14 @@
 #include "Entity.h"
 
 class GameObject;
+
 class Component : public Entity
 {
 public:
 	enum class	eComponentType
 	{
 		Transform,
+		Collider,
 		Script,
 		SpriteRenderer,
 		Animator,
