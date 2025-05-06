@@ -1,53 +1,45 @@
-#include "StartScene.h"
-
+#include "WinScene.h"
 #include "../Source/SpriteRenderer.h"
 #include "../Source/Transform.h"
 #include "../Source/InputSystem.h"
-#include "../Source/SceneManager.h"
+
 #include "../Source/Scene.h"
 #include "../Source/GameObject.h"
 #include "../Source/ResourceManager.h"
-
-StartScene::StartScene()
+WinScene::WinScene()
 {
 }
 
-StartScene::~StartScene()
+WinScene::~WinScene()
 {
 }
 
-void StartScene::Initialize()
+void WinScene::Initialize()
 {
 	Scene::Initialize();
 	GameObject* logo = new GameObject();
 
 	SpriteRenderer* sr = logo->AddComponent<SpriteRenderer>();
-	sr->SetTexture(ResourceManager::GetInstance().Find<Texture>(L"TitleLogo"));
+	sr->SetTexture(ResourceManager::GetInstance().Find<Texture>(L"WinLogo"));
 
 	Transform* tf = logo->AddComponent<Transform>();
 	tf->SetName(L"tf");
-	tf->SetPosition(DirectX::SimpleMath::Vector2(500, 200));
+	tf->SetPosition(DirectX::SimpleMath::Vector2(300, 50));
 
 	AddObjectToLayer(logo, OBJECT);
 }
 
-void StartScene::Update()
+void WinScene::Update()
 {
 	Scene::Update();
 }
 
-void StartScene::LateUpdate()
+void WinScene::LateUpdate()
 {
 	Scene::LateUpdate();
-
-	if (InputSystem::GetInstance().IsKeyDown(Input::DIM_LB))
-	{
-		SceneManager::SetActiveScene(L"Stage1");
-	}
 }
 
-void StartScene::Render()
+void WinScene::Render()
 {
 	Scene::Render();
 }
-

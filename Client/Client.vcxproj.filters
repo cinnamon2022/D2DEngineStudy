@@ -45,6 +45,10 @@
     <ClInclude Include="Stage2.h">
       <Filter>PlayScene</Filter>
     </ClInclude>
+    <ClInclude Include="EnemyScript.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="WinScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="StartScene.cpp">
@@ -68,5 +72,9 @@
     <ClCompile Include="Stage2.cpp">
       <Filter>PlayScene</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyScript.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="WinScene.cpp" />
   </ItemGroup>
 </Project>

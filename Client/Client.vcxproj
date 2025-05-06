@@ -120,6 +120,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -131,6 +132,7 @@
   <ItemGroup>
     <ClInclude Include="EndingScene.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyScript.h" />
     <ClInclude Include="LoadResources.h" />
     <ClInclude Include="LoadScenes.h" />
     <ClInclude Include="Player.h" />
@@ -138,15 +140,18 @@
     <ClInclude Include="Stage1.h" />
     <ClInclude Include="Stage2.h" />
     <ClInclude Include="StartScene.h" />
+    <ClInclude Include="WinScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EndingScene.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyScript.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerScript.cpp" />
     <ClCompile Include="Stage1.cpp" />
     <ClCompile Include="Stage2.cpp" />
     <ClCompile Include="StartScene.cpp" />
+    <ClCompile Include="WinScene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

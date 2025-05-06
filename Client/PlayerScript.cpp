@@ -1,10 +1,11 @@
 #include "PlayerScript.h"
 
-#include "GameObject.h"
-#include "InputSystem.h"
-#include "TimeSystem.h"
-#include "Transform.h"
-#include "Collider.h"
+#include "../Source/Animator.h"
+#include "../Source/GameObject.h"
+#include "../Source/InputSystem.h"
+#include "../Source/TimeSystem.h"
+#include "../Source/Transform.h"
+#include "../Source/SceneManager.h"
 
 PlayerScript::PlayerScript()
 {
@@ -45,6 +46,12 @@ void PlayerScript::Update()
 		playerPos.x += speed * time.DeltaTime();
 	}
 	transform->SetPosition(playerPos);
+
+	if (InputSystem::GetInstance().IsKeyPress(DIK_Q))
+	{
+		playerPos.y -= speed * time.DeltaTime();
+	}
+
 }
 
 void PlayerScript::LateUpdate()
@@ -57,17 +64,19 @@ void PlayerScript::Render()
 	Script::Render();
 }
 
-void PlayerScript::OnCollisionEnter(class Collider* other)
+void PlayerScript::OnCollisionEnter(Collider* other)
 {
-	Script::OnCollisionEnter(other);
+	Animator* ani = GetOwner()->GetComponent<Animator>();
+	ani->PlayAnimation(L"PlayerDie");
+	SceneManager::SetActiveScene(L"EndingScene");
 }
 
-void PlayerScript::OnCollisionStay(class Collider* other)
+void PlayerScript::OnCollisionStay(Collider* other)
 {
-	Script::OnCollisionStay(other);
+	int a = 0;
 }
 
-void PlayerScript::OnCollisionExit(class Collider* other)
+void PlayerScript::OnCollisionExit(Collider* other)
 {
-	Script::OnCollisionExit(other);
+	int a = 0;
 }

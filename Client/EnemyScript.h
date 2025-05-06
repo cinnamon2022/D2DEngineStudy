@@ -1,18 +1,10 @@
 #pragma once
 #include "../Source/Script.h"
-class PlayerScript :
-    public Script
+class EnemyScript : public Script
 {
 public:
-	enum class eState
-	{
-		Idle,
-		LeftWalk,
-		RightWalk,
-        Attack
-	};
-    PlayerScript();
-    ~PlayerScript();
+    EnemyScript();
+    ~EnemyScript();
 
     void Initialize() override;
     void Update()override;
@@ -22,6 +14,8 @@ public:
     void OnCollisionEnter(class Collider* other)override;
     void OnCollisionStay(class Collider* other)override;
     void OnCollisionExit(class Collider* other)override;
-
+private:
+    float timer = 0;
+    float speed = 100.f;
 };
 

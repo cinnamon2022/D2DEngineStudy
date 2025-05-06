@@ -12,6 +12,8 @@ void LoadResources()
 	ResourceManager::GetInstance().Load<Texture>(L"EnemyKill", L"../Resources/EnemyKill.png");
 	ResourceManager::GetInstance().Load<Texture>(L"PlayerIdle", L"../Resources/Idle_left.png");
 	ResourceManager::GetInstance().Load<Texture>(L"TitleLogo", L"../Resources/TitleLogo.png");
+	ResourceManager::GetInstance().Load<Texture>(L"WinLogo", L"../Resources/WinLogo.png");
+	ResourceManager::GetInstance().Load<Texture>(L"EndLogo", L"../Resources/EndLogo.png");
 	ResourceManager::GetInstance().Load<Texture>(L"PlayerWalk", L"../Resources/Walk_left.png");
 
 }

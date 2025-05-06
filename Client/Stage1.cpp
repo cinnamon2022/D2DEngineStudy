@@ -8,6 +8,7 @@
 #include "Player.h"
 #include "CollisionManager.h"
 #include "Enemy.h"
+#include "EnemyScript.h"
 #include "SceneManager.h"
 #include "Texture.h"
 #include "Transform.h"
@@ -36,8 +37,6 @@ void Stage1::Enter()
 void Stage1::Exit()
 {
 	Scene::Exit();
-	Transform* tf = dino->GetComponent<Transform>();
-	tf->SetPosition(DirectX::SimpleMath::Vector2(500, 800));
 }
 
 void Stage1::Initialize()
@@ -50,21 +49,20 @@ void Stage1::Initialize()
 	dinoani->CreateAnimation(L"PlayerIdle", ResourceManager::GetInstance().Find<Texture>(L"PlayerIdle"),
 		DirectX::SimpleMath::Vector2(0, 0), DirectX::SimpleMath::Vector2(129.5, 108), 
 		DirectX::SimpleMath::Vector2(0, 0), 4, 0.08f);
-	dinoani->CreateAnimation(L"PlayerWalk", ResourceManager::GetInstance().Find<Texture>(L"PlayerIdle"),
+	dinoani->CreateAnimation(L"PlayerWalk", ResourceManager::GetInstance().Find<Texture>(L"PlayerWalk"),
 		DirectX::SimpleMath::Vector2(0, 0), DirectX::SimpleMath::Vector2(129.5, 108),
 		DirectX::SimpleMath::Vector2(0, 0), 4, 0.08f);
-	dinoani->CreateAnimation(L"PlayerAttack", ResourceManager::GetInstance().Find<Texture>(L"PlayerIdle"),
+
+	dinoani->CreateAnimation(L"PlayerDie", ResourceManager::GetInstance().Find<Texture>(L"PlayerDie"),
 		DirectX::SimpleMath::Vector2(0, 0), DirectX::SimpleMath::Vector2(129.5, 108),
 		DirectX::SimpleMath::Vector2(0, 0), 4, 0.08f);
 
 	dinoani->PlayAnimation(L"PlayerIdle");
 	Transform* dinotf = dino->AddComponent<Transform>();
 	dinotf->SetName(L"tf");
-	dinotf->SetPosition(DirectX::SimpleMath::Vector2(800, 1000));
+	dinotf->SetPosition(DirectX::SimpleMath::Vector2(800, 600));
 	dino->AddComponent<Collider>();
-
 	dino->AddComponent<PlayerScript>();
-
 	AddObjectToLayer(dino,PLAYER);
 
 	robo = new Enemy();
@@ -72,16 +70,13 @@ void Stage1::Initialize()
 	roboani->CreateAnimation(L"Enemy", ResourceManager::GetInstance().Find<Texture>(L"Enemy"),
 		DirectX::SimpleMath::Vector2(0, 0), DirectX::SimpleMath::Vector2(108, 108),
 		DirectX::SimpleMath::Vector2(0, 0), 4, 0.08f);
-
 	roboani->PlayAnimation(L"Enemy");
 	Transform* robotf = robo->AddComponent<Transform>();
 	robotf->SetName(L"tf");
-	robotf->SetPosition(DirectX::SimpleMath::Vector2(100, 1000));
+	robotf->SetPosition(DirectX::SimpleMath::Vector2(300, 600));
 	robo->AddComponent<Collider>();
-
+	robo->AddComponent<EnemyScript>();
 	AddObjectToLayer(robo, OBJECT);
-
-
 
 }
 

@@ -4,8 +4,8 @@
 #include "framework.h"
 #include "Engine.h"
 #include "../Source/MyApp.h"
-#include "../Client/LoadScenes.h"
 #include "../Client/LoadResources.h"
+#include "../Client/LoadScenes.h"
 
 #define MAX_LOADSTRING 100
 

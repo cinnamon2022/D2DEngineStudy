@@ -1,7 +1,4 @@
 #include "Player.h"
-#include "InputSystem.h"
-#include "TimeSystem.h"
-#include "Transform.h"
 
 void Player::Initialize()
 {
