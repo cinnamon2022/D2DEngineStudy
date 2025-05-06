@@ -4,6 +4,7 @@
 #include "InputSystem.h"
 #include "TimeSystem.h"
 #include "Transform.h"
+#include "Collider.h"
 
 PlayerScript::PlayerScript()
 {
@@ -54,4 +55,19 @@ void PlayerScript::LateUpdate()
 void PlayerScript::Render()
 {
 	Script::Render();
+}
+
+void PlayerScript::OnCollisionEnter(class Collider* other)
+{
+	Script::OnCollisionEnter(other);
+}
+
+void PlayerScript::OnCollisionStay(class Collider* other)
+{
+	Script::OnCollisionStay(other);
+}
+
+void PlayerScript::OnCollisionExit(class Collider* other)
+{
+	Script::OnCollisionExit(other);
 }

@@ -1,6 +1,7 @@
 #pragma once
 #include "../Source/Scene.h"
 
+class Enemy;
 class Player;
 
 class Stage1 : public Scene
@@ -19,5 +20,6 @@ public:
 	
 private:
 	Player* dino;
+	Enemy* robo;
 };
 

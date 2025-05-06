@@ -1,4 +1,5 @@
 #include "Script.h"
+#include "Collider.h"
 
 Script::Script() : Component(eComponentType::Script)
 {
@@ -26,4 +27,16 @@ void Script::LateUpdate()
 void Script::Render()
 {
 	Component::Render();
+}
+
+void Script::OnCollisionEnter(Collider* other)
+{
+}
+
+void Script::OnCollisionStay(Collider* other)
+{
+}
+
+void Script::OnCollisionExit(Collider* other)
+{
 }

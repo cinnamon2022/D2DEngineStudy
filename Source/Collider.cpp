@@ -4,12 +4,16 @@
 #include "Component.h"
 #include "GameObject.h"
 #include "MyD2D.h"
+#include "Script.h"
 #include "Transform.h"
+
+UINT32 Collider::g_collisionID = 1;
 
 Collider::Collider()
     : Component(eComponentType::Collider)
 {
-   
+    m_id = g_collisionID++;
+    m_size = DirectX::SimpleMath::Vector2(1, 1);
 }
 
 Collider::~Collider()
@@ -39,5 +43,23 @@ void Collider::Render()
 
     pBrush->Release();
 #endif
+}
+
+void Collider::OnCollisionEnter(Collider* other)
+{
+    Script* script = GetOwner()->GetComponent<Script>();
+    script->OnCollisionEnter(other);
+}
+
+void Collider::OnCollisionStay(Collider* other)
+{
+    Script* script = GetOwner()->GetComponent<Script>();
+    script->OnCollisionStay(other);
+}
+
+void Collider::OnCollisionExit(Collider* other)
+{
+    Script* script = GetOwner()->GetComponent<Script>();
+    script->OnCollisionExit(other);
 }
 

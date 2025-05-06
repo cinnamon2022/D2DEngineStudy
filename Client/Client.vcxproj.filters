@@ -13,13 +13,14 @@
     <Filter Include="GameObject">
       <UniqueIdentifier>{ce703c9b-b633-480b-ab77-9f0d9fab22a9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="PlayScene">
+      <UniqueIdentifier>{135c08ad-bc16-457e-98a9-e72ef18d4680}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Stage1.h" />
     <ClInclude Include="LoadScenes.h">
       <Filter>Load</Filter>
     </ClInclude>
-    <ClInclude Include="Stage2.h" />
     <ClInclude Include="LoadResources.h">
       <Filter>Load</Filter>
     </ClInclude>
@@ -35,10 +36,17 @@
     <ClInclude Include="PlayerScript.h">
       <Filter>GameObject</Filter>
     </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1.h">
+      <Filter>PlayScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage2.h">
+      <Filter>PlayScene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Stage1.cpp" />
-    <ClCompile Include="Stage2.cpp" />
     <ClCompile Include="StartScene.cpp">
       <Filter>0.Strat</Filter>
     </ClCompile>
@@ -50,6 +58,15 @@
     </ClCompile>
     <ClCompile Include="PlayerScript.cpp">
       <Filter>GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage1.cpp">
+      <Filter>PlayScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage2.cpp">
+      <Filter>PlayScene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
